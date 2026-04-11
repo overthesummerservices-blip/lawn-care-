@@ -445,7 +445,7 @@ export default function App() {
           )}
 
           {/* HERO */}
-          <section style={{ maxWidth: 1200, margin: "0 auto", padding: "56px 24px 48px" }}>
+          <section className="page-section">
             <div className={`hero-grid ${heroIn ? "hero-in" : ""}`}>
               <div>
                 <div className="eyebrow">
@@ -480,7 +480,7 @@ export default function App() {
           </section>
 
           {/* SERVICES GRID */}
-          <section ref={servicesRef} style={{ maxWidth: 1200, margin: "0 auto", padding: "48px 24px 64px" }}>
+          <section ref={servicesRef} className="page-section">
             <p className="section-label">Services</p>
             <h2>What we do</h2>
             <p className="section-desc">Pick a service to see pricing details and book online.</p>
@@ -504,7 +504,7 @@ export default function App() {
 
           {/* CONTACT */}
           <section ref={contactRef} style={{ background: "var(--white)", borderTop: "1px solid var(--border)" }}>
-            <div style={{ maxWidth: 1200, margin: "0 auto", padding: "56px 24px 72px" }}>
+            <div className="page-section">
               <p className="section-label">Contact</p>
               <h2>Get in touch</h2>
               <p className="section-desc">Questions before booking? Reach out anytime.</p>
@@ -545,7 +545,7 @@ export default function App() {
 
       {/* PRICING PAGE */}
       {page === "pricing" && (
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "48px 24px 80px" }}>
+        <div className="page-section">
           <button className="back-btn" onClick={goHome}><ChevLeft /> Back</button>
           <p className="section-label">Pricing</p>
           <h2>How we price</h2>
@@ -579,7 +579,7 @@ export default function App() {
 
       {/* SERVICE DETAIL PAGE */}
       {page === "service" && activeSvc && (
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "48px 24px 80px" }}>
+        <div className="page-section">
           <button className="back-btn" onClick={goHome}><ChevLeft /> All services</button>
           <div className="detail-grid">
             <div className="detail-card">
@@ -864,6 +864,7 @@ h1 em { font-style:italic; color:var(--grass); }
 .hero-card-btn:hover { background:var(--cream); }
 
 /* SECTION SHARED */
+.page-section { max-width:1200px; margin:0 auto; padding:56px 24px 48px; }
 .section-label { display:block; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--grass); margin-bottom:10px; }
 h2 { font-size:clamp(30px,4vw,52px); font-weight:900; letter-spacing:-1px; color:var(--ink); line-height:1.05; margin-bottom:12px; }
 .section-desc { font-size:17px; color:var(--text-muted); max-width:540px; line-height:1.7; font-weight:300; margin-bottom:40px; }
@@ -962,10 +963,13 @@ select.input { background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www
   /* Nav */
   .nav-links,.nav-cta { display:none; }
   .nav-burger { display:flex; }
-  .nav-inner { padding:0 16px; }
+  .nav-inner { padding:0 20px; }
+
+  /* Section padding */
+  .page-section { padding:32px 20px 40px; }
 
   /* Hero */
-  .hero-grid { padding:32px 16px 24px !important; gap:24px; }
+  .hero-grid { padding:0 !important; gap:24px; }
   h1 { font-size:42px; letter-spacing:-1.5px; margin-bottom:16px; }
   .hero-desc { font-size:16px; margin-bottom:24px; }
   .hero-btns { gap:10px; }
