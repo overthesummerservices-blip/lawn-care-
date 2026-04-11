@@ -523,13 +523,6 @@ export default function App() {
                     <div className="contact-val">Mechanicsburg, PA 17055 + nearby</div>
                   </div>
                 </div>
-                <div className="contact-card">
-                  <div className="contact-icon">📞</div>
-                  <div>
-                    <div className="contact-label">Phone</div>
-                    <div className="contact-val" style={{ color: "var(--text-muted)" }}>Add your number here</div>
-                  </div>
-                </div>
                 <div className="contact-card" style={{ background: "var(--grass)", border: "none", cursor: "pointer" }} onClick={() => openBooking("mowing")}>
                   <div className="contact-icon" style={{ background: "rgba(255,255,255,0.15)" }}>📅</div>
                   <div>
