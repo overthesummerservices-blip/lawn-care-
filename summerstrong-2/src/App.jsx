@@ -1018,10 +1018,17 @@ select.input { background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www
 }
 
 @media(max-width:480px) {
-  .services-grid { grid-template-columns:1fr; }
+  .services-grid { grid-template-columns:1fr; gap:10px; }
   h1 { font-size:36px; }
-  .svc-art { height:100px; font-size:44px; }
   .hero-btns { flex-direction:column; }
   .btn-green, .btn-outline { width:100%; text-align:center; }
+  .svc-card { flex-direction:row; align-items:center; }
+  .svc-art { width:80px; min-width:80px; height:80px; font-size:32px; flex-shrink:0; border-radius:0; }
+  .svc-tag { display:none; }
+  .svc-body { padding:14px 16px; }
+  .svc-title { font-size:15px; }
+  .svc-desc { display:none; }
+  .svc-price { font-size:13px; margin-bottom:0; }
+  .svc-arrow { font-size:12px; margin-top:6px; }
 }
 `;
