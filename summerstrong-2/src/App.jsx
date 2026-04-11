@@ -523,6 +523,13 @@ export default function App() {
                     <div className="contact-val">Mechanicsburg, PA 17055 + nearby</div>
                   </div>
                 </div>
+                <div className="contact-card">
+                  <div className="contact-icon">📞</div>
+                  <div>
+                    <div className="contact-label">Phone</div>
+                    <div className="contact-val" style={{ color: "var(--text-muted)" }}>Add your number here</div>
+                  </div>
+                </div>
                 <div className="contact-card" style={{ background: "var(--grass)", border: "none", cursor: "pointer" }} onClick={() => openBooking("mowing")}>
                   <div className="contact-icon" style={{ background: "rgba(255,255,255,0.15)" }}>📅</div>
                   <div>
@@ -950,15 +957,67 @@ select.input { background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www
   .pricing-grid { grid-template-columns:1fr; }
   .contact-grid { grid-template-columns:1fr; }
 }
+
 @media(max-width:768px) {
+  /* Nav */
   .nav-links,.nav-cta { display:none; }
   .nav-burger { display:flex; }
-  .modal-body { grid-template-columns:1fr; }
-  .summary { position:static; order:-1; }
+  .nav-inner { padding:0 16px; }
+
+  /* Hero */
+  .hero-grid { padding:32px 16px 24px !important; gap:24px; }
+  h1 { font-size:42px; letter-spacing:-1.5px; margin-bottom:16px; }
+  .hero-desc { font-size:16px; margin-bottom:24px; }
+  .hero-btns { gap:10px; }
+  .btn-green, .btn-outline { padding:12px 22px; font-size:14px; }
+
+  /* Sections */
+  .section-desc { font-size:15px; margin-bottom:28px; }
+  h2 { font-size:30px; }
+
+  /* Services */
+  .services-grid { grid-template-columns:1fr 1fr; gap:12px; }
+  .svc-art { height:90px; font-size:38px; }
+  .svc-body { padding:14px; }
+  .svc-title { font-size:15px; }
+  .svc-desc { font-size:12px; }
+
+  /* Contact */
+  .contact-grid { grid-template-columns:1fr; gap:12px; }
+  .contact-card { padding:20px; }
+
+  /* Pricing */
+  .pricing-card { padding:24px; }
+
+  /* Detail page */
+  .detail-art { height:160px; font-size:60px; }
+  .detail-body { padding:24px; }
+  .detail-body h2 { font-size:28px; }
+
+  /* Modal */
+  .overlay { padding:0; align-items:flex-end; }
+  .modal { border-radius:24px 24px 0 0; max-height:95vh; }
+  .modal-head { padding:20px 16px 16px; border-radius:24px 24px 0 0; }
+  .modal-title { font-size:22px; }
+  .modal-body { grid-template-columns:1fr; padding:16px; gap:16px; }
+  .summary { position:static; order:-1; padding:20px; }
+  .summary-estimate { font-size:34px; }
   .form-row { grid-template-columns:1fr; }
-  .modal-head,.modal-body { padding-left:20px; padding-right:20px; }
+  .form-col { gap:12px; }
+  .input { font-size:16px; padding:12px 14px; } /* 16px prevents iOS zoom */
+
+  /* Back button */
+  .back-btn { margin-bottom:20px; }
+
+  /* Footer */
+  .footer { font-size:12px; padding:20px 16px; word-break:break-word; }
 }
+
 @media(max-width:480px) {
   .services-grid { grid-template-columns:1fr; }
+  h1 { font-size:36px; }
+  .svc-art { height:100px; font-size:44px; }
+  .hero-btns { flex-direction:column; }
+  .btn-green, .btn-outline { width:100%; text-align:center; }
 }
 `;
