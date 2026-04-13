@@ -14,14 +14,14 @@ const SERVICES = [
   {
     id: "mowing",
     title: "Lawn Mowing",
-    pricingMode: "size",
+    pricingMode: "hourly",
     emoji: "🌿",
     tag: "Most popular",
-    description: "Clean, even mowing for front and back yards with a neat finish.",
-    details: ["Weekly or bi-weekly service", "Front and back yard options", "Final quote confirmed after review"],
-    durations: { small: 60, medium: 90, large: 120 },
-    estimates: { small: [45, 57], medium: [58, 72], large: [75, 95] },
-    pricingNotes: ["Small yard: about $45–$57", "Medium yard: about $58–$72", "Large yard: about $75–$95+", "Final quote depends on yard size and condition"],
+    description: "Clean, even cuts for your front and back yard. We mow, edge, and leave it looking sharp.",
+    details: ["Front and back yard", "Edging included", "Weekly or bi-weekly available", "Final quote confirmed after review"],
+    durations: { standard: 90 },
+    estimates: { standard: [35, 45] },
+    pricingNotes: ["Priced at $35–$45 per hour", "Most yards take 1–2 hours", "Typical job runs $50–$90", "Final quote confirmed after we see your yard"],
   },
   {
     id: "weeding",
@@ -29,11 +29,11 @@ const SERVICES = [
     pricingMode: "hourly",
     emoji: "🌱",
     tag: "Hourly",
-    description: "Hand-pulled weeds from beds, edges, and walkways.",
-    details: ["Great for flower beds and landscaping", "More overgrowth takes more time", "Final quote confirmed after review"],
+    description: "We hand-pull weeds from your garden beds, walkways, and edges so your yard looks clean and cared for.",
+    details: ["Flower beds, borders, and walkways", "All weeds pulled by hand", "Heavier overgrowth takes more time", "Final quote confirmed after review"],
     durations: { standard: 120 },
-    estimates: { standard: [60, 85] },
-    pricingNotes: ["Estimated by time needed", "Starting range about $60–$85", "Heavier overgrowth increases the quote"],
+    estimates: { standard: [30, 40] },
+    pricingNotes: ["Priced at $30–$40 per hour", "Most jobs take 1–3 hours", "Typical job runs $50–$100", "More overgrowth means more time"],
   },
   {
     id: "cleanup",
@@ -41,35 +41,23 @@ const SERVICES = [
     pricingMode: "hourly",
     emoji: "🍃",
     tag: "Seasonal",
-    description: "Leaves, sticks, light overgrowth, and a general yard refresh.",
-    details: ["Great before parties or for seasonal cleanup", "Estimate depends on debris amount", "Final quote confirmed after review"],
+    description: "We clear out leaves, sticks, debris, and anything making your yard look rough. Great for a seasonal refresh or before an event.",
+    details: ["Leaves, sticks, and debris removed", "Great before parties or after storms", "Works for spring and fall cleanups", "Final quote confirmed after review"],
     durations: { standard: 120 },
-    estimates: { standard: [80, 120] },
-    pricingNotes: ["Estimated by time needed", "Starting range about $80–$120", "More debris raises the quote"],
-  },
-  {
-    id: "trimming",
-    title: "Bush Trimming",
-    pricingMode: "size",
-    emoji: "✂️",
-    tag: "Curb appeal",
-    description: "Simple shaping and trimming for bushes and shrubs.",
-    details: ["Front entry cleanup and curb appeal", "Based on number and size of bushes", "Final quote confirmed after review"],
-    durations: { small: 60, medium: 90, large: 120 },
-    estimates: { small: [65, 80], medium: [85, 110], large: [115, 145] },
-    pricingNotes: ["Small job: about $65–$80", "Medium job: about $85–$110", "Large job: about $115–$145+", "Final quote depends on trimming needed"],
+    estimates: { standard: [35, 45] },
+    pricingNotes: ["Priced at $35–$45 per hour", "Most jobs take 1–3 hours", "Typical job runs $60–$120", "More debris means more time"],
   },
   {
     id: "trash",
-    title: "Trash Can Service",
+    title: "Trash Can Cleaning",
     pricingMode: "flat",
     emoji: "🗑️",
-    tag: "Add-on",
-    description: "Roll cans to and from the curb or help with light trash area cleanup.",
-    details: ["Simple add-on or recurring service", "Helpful for busy homeowners", "Extra work can raise the quote"],
-    durations: { standard: 30 },
-    estimates: { standard: [20, 30] },
-    pricingNotes: ["Basic service starts around $20", "Extra cans or cleanup can increase the quote"],
+    tag: "Deep clean",
+    description: "We power wash the inside and outside of your trash cans, scrub out all the built-up gunk, and leave them actually clean.",
+    details: ["Power washed inside and out", "Scrubbed clean of residue and odors", "Up to 3 cans included", "Extra cans available for small add-on fee"],
+    durations: { standard: 45 },
+    estimates: { standard: [25, 40] },
+    pricingNotes: ["Flat rate: $25–$40 for up to 3 cans", "Extra cans are a small add-on", "Final quote confirmed after review"],
   },
   {
     id: "powerwashing",
@@ -77,11 +65,11 @@ const SERVICES = [
     pricingMode: "size",
     emoji: "💦",
     tag: "Deep clean",
-    description: "Driveways, patios, walkways, and outdoor surfaces blasted clean.",
-    details: ["Great for patios and concrete", "Larger areas take longer", "Final quote confirmed after review"],
+    description: "We blast driveways, patios, walkways, and outdoor surfaces clean. Makes a huge difference in curb appeal.",
+    details: ["Driveways, patios, and walkways", "Removes dirt, mold, and stains", "Larger areas take more time", "Final quote confirmed after review"],
     durations: { small: 90, medium: 120, large: 150 },
-    estimates: { small: [85, 110], medium: [120, 155], large: [160, 210] },
-    pricingNotes: ["Small area: about $85–$110", "Medium area: about $120–$155", "Large area: about $160–$210+", "Final quote depends on area size and condition"],
+    estimates: { small: [80, 100], medium: [110, 150], large: [160, 200] },
+    pricingNotes: ["Small area: about $80–$100", "Medium area: about $110–$150", "Large area: about $160–$200+", "Final quote depends on size and condition"],
   },
   {
     id: "pool",
@@ -89,11 +77,11 @@ const SERVICES = [
     pricingMode: "hourly",
     emoji: "🏊",
     tag: "Summer ready",
-    description: "Basic pool skimming, debris cleanup, and light pool area care.",
-    details: ["Good for leaves and surface debris", "Heavier cleanup takes longer", "Final quote confirmed after review"],
+    description: "We skim the surface, clear out debris, and tidy up the pool area so it's ready to use.",
+    details: ["Surface skimming and debris removal", "Pool area tidied up", "Heavier buildup takes more time", "Final quote confirmed after review"],
     durations: { standard: 90 },
-    estimates: { standard: [70, 100] },
-    pricingNotes: ["Estimated by time needed", "Starting range about $70–$100", "Heavier debris raises the quote"],
+    estimates: { standard: [30, 40] },
+    pricingNotes: ["Priced at $30–$40 per hour", "Most jobs take 1–2 hours", "Typical job runs $50–$90", "More debris raises the total"],
   },
   {
     id: "dogwalking",
@@ -101,11 +89,11 @@ const SERVICES = [
     pricingMode: "length",
     emoji: "🐕",
     tag: "Recurring",
-    description: "Reliable neighborhood dog walks for busy owners.",
-    details: ["Quick and standard walk options", "Simple service with flexible scheduling", "Final quote depends on walk length"],
+    description: "Reliable, friendly walks around the neighborhood for your dog while you're busy.",
+    details: ["Quick and standard walk options", "Neighborhood routes", "Flexible scheduling available", "Final quote depends on walk length"],
     durations: { quick: 30, standard: 60 },
-    estimates: { quick: [20, 26], standard: [28, 38] },
-    pricingNotes: ["Quick walk: about $20–$26", "Standard walk: about $28–$38", "Final quote depends on walk length"],
+    estimates: { quick: [20, 25], standard: [28, 35] },
+    pricingNotes: ["Quick walk (30 min): about $20–$25", "Standard walk (60 min): about $28–$35", "Final quote depends on walk length and needs"],
   },
 ];
 
@@ -521,6 +509,13 @@ export default function App() {
                   <div>
                     <div className="contact-label">Service area</div>
                     <div className="contact-val">Mechanicsburg, PA 17055 + nearby</div>
+                  </div>
+                </div>
+                <div className="contact-card">
+                  <div className="contact-icon">📞</div>
+                  <div>
+                    <div className="contact-label">Phone</div>
+                    <div className="contact-val" style={{ color: "var(--text-muted)" }}>Add your number here</div>
                   </div>
                 </div>
                 <div className="contact-card" style={{ background: "var(--grass)", border: "none", cursor: "pointer" }} onClick={() => openBooking("mowing")}>
